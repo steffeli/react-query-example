@@ -1,33 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { createServer } from "miragejs"
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools'
+import { ChakraProvider } from '@chakra-ui/react';
+import mockServer from './mock';
 
-createServer({
-  routes() {
-    this.namespace = "api"
-    this.timing = 300
-    this.get("/movies", () => [
-          { id: 1, name: "Inception", year: 2010 },
-          { id: 2, name: "Interstellar", year: 2014 },
-          { id: 3, name: "Dunkirk", year: 2017 },
-          { id: 4, name: "The Dark Knight", year: 2008 },
-        ]
-    )
-  },
-})
+mockServer()
 
 const queryClient = new QueryClient()
 
 ReactDOM.render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <App />
-      <ReactQueryDevtools initialIsOpen={false} />
-
-    </QueryClientProvider>
+    <ChakraProvider>
+      <QueryClientProvider client={queryClient}>
+        <App />
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+    </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );

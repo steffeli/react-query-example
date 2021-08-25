@@ -1,18 +1,22 @@
+import { QueryKeys } from '../core/types'
 import React from 'react'
 import { useQuery } from 'react-query'
 import type { Movie } from '../core/domain/movies'
 import { MovieService } from '../core/services/movie-service'
-import { QueryKeys } from '../types/query-keys'
+import { Box, Container, SimpleGrid, Spinner } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 
 function MoviesOverview() {
 
 	const {isLoading, isError, data, error} = useQuery<Movie[], Error>(QueryKeys.MOVIES, MovieService.getAllMovies)
 
 	return (
-		<div>
-			{isLoading && <h1>Loading...</h1>}
-			{!isLoading && data?.map(m => <h1 key={m.id}>{m.name}</h1>)}
-		</div>
+		<>
+			{isLoading &&  <Container centerContent><Spinner size="xl" /></Container>}
+			<SimpleGrid columns={4} spacing={10}>
+				{!isLoading && data?.map(movie => <Link to={`/movies/${movie.id}`}><Box rounded={6} border="2px solid black" height="80px">{movie.name}</Box></Link>)}
+			</SimpleGrid>
+		</>
 	)
 }
 
