@@ -24,7 +24,7 @@ function MoviesOverview() {
       <SimpleGrid columns={4} spacing={10}>
         {!isLoading &&
           data?.map((movie) => (
-            <Link to={`/movies/${movie.id}`}>
+            <Link key={movie.id} to={`/movies/${movie.id}`}>
               <MovieCard movie={movie} />
             </Link>
           ))}

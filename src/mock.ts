@@ -70,6 +70,11 @@ const mockServer = () =>
         let id = request.params.id;
         return schema.db.movies.find(id);
       });
+      this.post("/movies", (schema, request) => {
+        let attrs = JSON.parse(request.requestBody);
+        console.log("atters", request.requestBody);
+        return schema.db.movies.insert(attrs);
+      });
     },
   });
 
