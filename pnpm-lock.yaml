@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@chakra-ui/icons': ^1.0.15
   '@chakra-ui/react': ^1.6.6
   '@emotion/react': ^11
   '@emotion/styled': ^11
@@ -29,6 +30,7 @@ specifiers:
   typescript: ^4.2.4
 
 dependencies:
+  '@chakra-ui/icons': 1.0.15_react@17.0.2
   '@chakra-ui/react': 1.6.6_8d167c97cec7349161163108e2f2e3ad
   '@emotion/react': 11.4.1_4cd822c6044f4c1a7e1f1fea0e728f12
   '@emotion/styled': 11.3.0_4a13a1c8be6e32a351380640be5b202d
@@ -520,6 +522,27 @@ packages:
     dependencies:
       '@chakra-ui/system': 1.7.2_2305e84770652125202aaa4817ae97a9
       '@chakra-ui/utils': 1.8.2
+      react: 17.0.2
+    dev: false
+
+  /@chakra-ui/icon/1.1.11_react@17.0.2:
+    resolution: {integrity: sha512-w+TkBr8eA8023j1SdhBzCFrEeU4lolf96cYVz0t/FVUBdIHYPGt56iHdaE2HYXW8Jyp15WLZcJJZQnZo91GRww==}
+    peerDependencies:
+      '@chakra-ui/system': '>=1.0.0'
+      react: '>=16.8.6'
+    dependencies:
+      '@chakra-ui/utils': 1.8.2
+      react: 17.0.2
+    dev: false
+
+  /@chakra-ui/icons/1.0.15_react@17.0.2:
+    resolution: {integrity: sha512-MMuPwmeCil9vAXceIN/Fxn6CNHbhkLofFQaKUfs+UaBsviiU2tvS0nqGaxm/9FNzLr5ithPVWpbz3uV7DXc77g==}
+    peerDependencies:
+      '@chakra-ui/system': '>=1.0.0'
+      react: '>=16.8.6'
+    dependencies:
+      '@chakra-ui/icon': 1.1.11_react@17.0.2
+      '@types/react': 17.0.19
       react: 17.0.2
     dev: false
 
@@ -1753,7 +1776,6 @@ packages:
 
   /@types/prop-types/15.7.4:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
-    dev: true
 
   /@types/qs/6.9.7:
     resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}
@@ -1790,7 +1812,6 @@ packages:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
       csstype: 3.0.8
-    dev: true
 
   /@types/resolve/1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
@@ -1806,7 +1827,6 @@ packages:
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
-    dev: true
 
   /@types/serve-static/1.13.10:
     resolution: {integrity: sha512-nCkHGI4w7ZgAdNkrEu0bv+4xNV/XDqW+DydknebMOQwkpDGx8G+HTlj7R7ABI8i8nKxVw0wtKPi1D+lPOkh4YQ==}
