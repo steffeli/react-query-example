@@ -1,4 +1,4 @@
-import type { Movie } from "core/domain/movies";
+import type { Movie } from "./core/domain/movies";
 import { createServer } from "miragejs";
 
 const movies: Movie[] = [
